@@ -316,32 +316,6 @@ python run.py --all
 
 ---
 
-## ☁️ Cloud Deployment Instructions
-
-### 1. Streamlit Community Cloud (Zero-Cost Deployment)
-1. Push this repository to your GitHub account (`https://github.com/<your-username>/glucoguard-ml`).
-2. Navigate to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
-3. Click **"New App"** and select your repository.
-4. Set:
-   - **Branch**: `main`
-   - **Main file path**: `app.py`
-5. Click **"Deploy"**. Streamlit Cloud will install dependencies from `requirements.txt` and launch the live URL within 2 minutes.
-
-### 2. Hugging Face Spaces (Streamlit SDK)
-1. Create a new Space on [huggingface.co/spaces](https://huggingface.co/spaces).
-2. Select **Streamlit** as the Space SDK.
-3. Push the repository contents to the Hugging Face Space git remote.
-4. The application will initialize automatically using Python 3.10+.
-
-### 3. Docker / Cloud Run Deployment (FastAPI Microservice)
-```dockerfile
-FROM python:3.10-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
-```
 
 ---
 
