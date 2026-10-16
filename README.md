@@ -61,7 +61,7 @@ According to the World Health Organization (WHO) and the International Diabetes 
       - L2 Logistic Regression (ElasticNet)     - Local Marginal Feature Attributions
       - Balanced Random Forest (250 trees)      - Waterfall & Horizontal Delta Plots
       - Tuned XGBoost (scale_pos_weight)        - Clinical Intervention Generator
-      - ⭐ Soft-Voting Meta-Ensemble (Champion)  - 📄 Single-Page Medical PDF Compiler
+      - Soft-Voting Meta-Ensemble (Champion)  - 📄 Single-Page Medical PDF Compiler
       Stratified 5-Fold Cross-Validation                      |
                       |                                       |
                       +-------------------+-------------------+
