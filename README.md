@@ -119,8 +119,8 @@ The engine leverages the standardized Pima Indians Diabetes clinical schema:
 In raw medical databases, missing or unrecorded tests are frequently encoded as `0`. A recorded blood pressure of `0 mmHg` or fasting glucose of `0 mg/dL` is biologically incompatible with human life. GlucoGuard systematically identifies these biological zeros across `['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']`, converts them to `np.nan`, and applies median imputation fitted exclusively on the training distribution to eliminate data leakage.
 
 ### 3. Advanced Feature Engineering Formulations
-1. **HOMA-IR Proxy (Homeostatic Model Assessment of Insulin Resistance)**:
-   $$\text{HOMA\_IR} \approx \frac{\text{Glucose} \times \text{Insulin}}{405}$$
+1.**HOMA-IR Proxy (Homeostatic Model Assessment of Insulin Resistance)**:
+   $$\text{HOMA-IR} \approx \frac{\text{Glucose} \times \text{Insulin}}{405}$$
    *Rationale*: Gold standard surrogate for hepatic insulin resistance and beta-cell secretory exhaustion.
 2. **Insulin-to-Glucose Ratio (`Insulin_Glucose_Ratio`)**:
    $$\text{Ratio} = \frac{\text{Insulin}}{\text{Glucose} + 10^{-6}}$$
@@ -147,11 +147,6 @@ All candidate architectures were evaluated using **Stratified 5-Fold Cross-Valid
 | **Random Forest (Entropy, 250 Trees)** | $0.8784 \pm 0.024$ | 83.77% | 0.7544 | 0.7963 | 0.7748 | 0.8935 |
 | **XGBoost Classifier (Regularized)** | $0.8891 \pm 0.021$ | 85.06% | 0.7778 | 0.8148 | 0.7958 | 0.9084 |
 | ⭐ **Voting Ensemble (Champion)** | **$0.9023 \pm 0.019$** | **87.66%** | **0.8182** | **0.8333** | **0.8257** | **0.9214** |
-
-> **Optimization Impact**:
-> - **Test Accuracy surged from $80.52\%$ to $87.66\%$** ($+7.14\%$ absolute increase).
-> - **Test Recall (Clinical Sensitivity) boosted from $75.93\%$ to $83.33\%$** (reducing missed diabetic diagnoses by over $30\%$).
-> - **Test ROC-AUC crossed the $0.92$ threshold ($0.9214$)**, providing clinical-grade discrimination.
 
 ---
 
