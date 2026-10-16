@@ -122,17 +122,22 @@ In raw medical databases, missing or unrecorded tests are frequently encoded as 
 1.**HOMA-IR Proxy (Homeostatic Model Assessment of Insulin Resistance)**:
    $$\text{HOMA-IR} \approx \frac{\text{Glucose} \times \text{Insulin}}{405}$$
    *Rationale*: Gold standard surrogate for hepatic insulin resistance and beta-cell secretory exhaustion.
+   
 2. **Insulin-to-Glucose Ratio (`Insulin_Glucose_Ratio`)**:
    $$\text{Ratio} = \frac{\text{Insulin}}{\text{Glucose} + 10^{-6}}$$
    *Rationale*: Captures pancreatic overcompensation before diagnostic glucose threshold failure.
+   
 3. **Visceral Adiposity Ratio (`Skin_to_BMI_Ratio`)**:
    $$\text{Ratio} = \frac{\text{SkinThickness}}{\text{BMI} + 10^{-5}}$$
    *Rationale*: Distinguishes subcutaneous fat from visceral intra-abdominal adiposity.
+   
 4. **Metabolic Syndrome Composite Score (`Metabolic_Syndrome_Risk`)**:
    Integer count ($0$ to $4$) of clinical risk criteria: Glucose $\ge 100$, BP $\ge 85$, BMI $\ge 30$, and Age $\ge 45$.
-5. **BMI-Age Interaction (`BMI_Age_Interaction`)**:
+   
+6. **BMI-Age Interaction (`BMI_Age_Interaction`)**:
    $$\text{Interaction} = \text{BMI} \times \text{Age}$$
-6. **Metabolic Age Tier (`Risk_Age_Group`)**:
+   
+8. **Metabolic Age Tier (`Risk_Age_Group`)**:
    Binned brackets ($<30$, $30-44$, $45-59$, $\ge 60$ years).
 
 ---
